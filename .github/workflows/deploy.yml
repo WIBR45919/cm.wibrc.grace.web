@@ -11,7 +11,13 @@ jobs:
           npm run build
           npm run test:unit
           npm run lint
-    steps:
-        - uses: cypress-io/github-action@v2
-          with:
-            browser:  chrome
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: npm run test:e2e:ci
+          wait-on: http://localhost:3000
+      - uses: actions/upload-artifact@v1
+        if: always() # / if: failure() <- more suitable for production
+        with:
+          name: cypress-videos
+          path: cypress/videos

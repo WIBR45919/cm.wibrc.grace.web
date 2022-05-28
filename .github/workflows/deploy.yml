@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          npm config set proxy http://domain:8080
           npm ci
           npm run build
           npm run test:unit

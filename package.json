@@ -8,7 +8,7 @@
     "preview": "vite preview --port 5050",
     "test:unit": "vitest --environment jsdom",
     "test:e2e": "cypress open",
-    "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'",
+    "test:e2e:ci": "cypress run --browser chrome --config baseUrl=\"http://viwanda.cm:80/\"",
     "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "build-storybook": "build-storybook",
@@ -18,7 +18,7 @@
     "get-version": "node -p \"require('./package').version\"",
     "delete:reports": "rm tests-reports/e2e/cypress-junit-*.xml || true",
     "combine:reports": "jrm tests-reports/e2e/cypress-junit.xml \"tests-reports/e2e/cypress-junit-*.xml\"",
-    "storybook": "start-storybook -p 6006 --no-open"
+    "storybook": "start-storybook -p 6006 --no-open --no-manager-cache"
   },
   "dependencies": {
     "animated-scroll-to": "^2.2.0",

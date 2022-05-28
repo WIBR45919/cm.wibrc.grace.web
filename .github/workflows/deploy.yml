@@ -11,6 +11,5 @@ jobs:
           npm run build
           npm run test:unit
           npm run lint
-      - uses: cypress-io/github-action@v2
-      - run: |
           npm run test:e2e:ci
+      - uses: cypress-io/github-action@v2

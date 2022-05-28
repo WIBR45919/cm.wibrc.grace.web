@@ -6,12 +6,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
       - run: |
           npm ci
           npm run build
           npm run test:unit
           npm run lint
-      - name: lauch e2e tests
-      - uses: cypress-io/github-action@v2
-      - run: |
           npm run test:e2e:ci

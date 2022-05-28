@@ -1,18 +1,18 @@
-import HeaderComponent from "@/components/HomeComponent.vue";
+import HomeComponent from "@/components/HomeComponent.vue";
 
 export default {
   title: "Structure/header",
-  component: HeaderComponent,
+  component: HomeComponent,
 };
 
 const Template = () => ({
-  components: { HeaderComponent },
+  components: { HomeComponent },
 
   setup() {
     return {};
   },
 
-  template: "<HeaderComponent />",
+  template: "<HomeComponent />",
 });
 
-export const headerInstance = Template.bind({});
+export const homeInstance = Template.bind({});

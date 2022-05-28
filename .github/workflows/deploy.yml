@@ -12,4 +12,5 @@ jobs:
           npm run build
           npm run test:unit
           npm run lint
+          npm run dev
           npm run test:e2e:ci

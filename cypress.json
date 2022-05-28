@@ -1,0 +1,13 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "integrationFolder": "cypress/integration",
+  "screenshotOnRunFailure": true,
+  "chromeWebSecurity": true,
+  "video": false,
+  "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "tests-reports/e2e/cypress-junit-[hash].xml",
+    "attachments": true,
+    "jenkinsMode": true
+  }
+}

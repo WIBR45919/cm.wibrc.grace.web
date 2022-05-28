@@ -1,0 +1,93 @@
+{
+  "name": "cm.wibrc.grace.web",
+  "private": true,
+  "version": "0.1.0-SNAPSHOT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --port 5050",
+    "test:unit": "vitest --environment jsdom",
+    "test:e2e": "cypress open --browser firefox",
+    "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "build-storybook": "build-storybook",
+    "precommit": "lint-staged",
+    "prepare": "cd .. && husky install cm.wibrc.grace.web/.husky",
+    "stylelint": "stylelint '**/*.css'",
+    "get-version": "node -p \"require('./package').version\"",
+    "delete:reports": "rm tests-reports/e2e/cypress-junit-*.xml || true",
+    "combine:reports": "jrm tests-reports/e2e/cypress-junit.xml \"tests-reports/e2e/cypress-junit-*.xml\"",
+    "storybook": "start-storybook -p 6006 --no-open"
+  },
+  "dependencies": {
+    "animated-scroll-to": "^2.2.0",
+    "vue": "~3.2.31",
+    "vue-router": "^4.0.15"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@rushstack/eslint-patch": "~1.1.0",
+    "@storybook/addon-a11y": "^6.5.5",
+    "@storybook/addon-actions": "^6.5.0",
+    "@storybook/addon-essentials": "^6.5.0",
+    "@storybook/addon-interactions": "^6.5.0",
+    "@storybook/addon-links": "^6.5.0",
+    "@storybook/builder-vite": "^0.1.35",
+    "@storybook/testing-library": "^0.0.11",
+    "@storybook/vue3": "^6.5.0",
+    "@types/jsdom": "~16.2.14",
+    "@types/node": "~16.11.25",
+    "@vitejs/plugin-vue": "~2.2.2",
+    "@vue/eslint-config-prettier": "~7.0.0",
+    "@vue/eslint-config-typescript": "~10.0.0",
+    "@vue/test-utils": "~2.0.0-rc.18",
+    "@vue/tsconfig": "~0.1.3",
+    "autoprefixer": "~10.4.2",
+    "babel-loader": "^8.2.5",
+    "cypress": "~9.5.0",
+    "eslint": "~8.5.0",
+    "eslint-plugin-cypress": "~2.12.1",
+    "eslint-plugin-storybook": "~0.5.12",
+    "eslint-plugin-vue": "~8.2.0",
+    "husky": "7.0.4",
+    "jsdom": "~19.0.0",
+    "junit-report-merger": "^3.0.5",
+    "lint-staged": "12.1.2",
+    "mocha-junit-reporter": "^2.0.2",
+    "postcss": "~8.4.7",
+    "postcss-html": "~1.3.0",
+    "prettier": "~2.5.1",
+    "react-docgen-typescript-plugin": "^1.0.1",
+    "start-server-and-test": "~1.14.0",
+    "stylelint": "~14.2.0",
+    "stylelint-config-html": "~1.0.0",
+    "stylelint-config-recommended": "~6.0.0",
+    "stylelint-config-recommended-vue": "~1.1.0",
+    "stylelint-config-standard": "~24.0.0",
+    "stylelint-config-standard-scss": "~3.0.0",
+    "stylelint-processor-html": "~1.0.0",
+    "stylelint-scss": "~4.1.0",
+    "tailwindcss": "~3.0.23",
+    "typescript": "~4.5.5",
+    "vite": "~2.9.9",
+    "vitest": "~0.5.0",
+    "vue-loader": "^16.8.3",
+    "vue-tsc": "~0.31.4"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint"
+    ],
+    "*.{css,vue}": [
+      "stylelint"
+    ],
+    "*.{graphql,json}": [
+      "prettier --write"
+    ]
+  }
+}

@@ -6,7 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          npm install
+          npm config set registry http://registry.npmjs.org/
+          npm ci
           npm run build
           npm run test:unit
           npm run lint

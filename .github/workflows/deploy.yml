@@ -18,6 +18,9 @@ jobs:
           wait-on: http://localhost:3000
       - name: Copy test execution videos
         run: |
+          $(npm bin)/cypress cache path
+          $(npm bin)/cypress cache list
+          $(npm bin)/cypress verify
           mkdir public
           cp -r cypress/videos public/videos
       - name: Merge test results into one

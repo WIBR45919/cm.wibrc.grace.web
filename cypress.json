@@ -3,7 +3,6 @@
   "integrationFolder": "cypress/integration",
   "screenshotOnRunFailure": true,
   "chromeWebSecurity": true,
-  "video": false,
   "reporter": "cypress-multi-reporters",
   "reporterOptions": {
     "configFile": "reporter-config.json"

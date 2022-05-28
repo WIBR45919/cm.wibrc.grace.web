@@ -11,8 +11,7 @@ jobs:
           npm run build
           npm run test:unit
           npm run lint
-
-      steps:
-        - uses: cypress-io/github-action@v2
-          with:
-            browser:  chrome
+      - name: lauch e2e tests
+      - uses: cypress-io/github-action@v2
+      - run: |
+          npm run test:e2e:ci

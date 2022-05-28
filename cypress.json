@@ -4,10 +4,8 @@
   "screenshotOnRunFailure": true,
   "chromeWebSecurity": true,
   "video": false,
-  "reporter": "junit",
+  "reporter": "cypress-multi-reporters",
   "reporterOptions": {
-    "mochaFile": "tests-reports/e2e/cypress-junit-[hash].xml",
-    "attachments": true,
-    "jenkinsMode": true
+    "configFile": "reporter-config.json"
   }
 }

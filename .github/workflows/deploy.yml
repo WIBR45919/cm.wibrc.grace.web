@@ -25,7 +25,6 @@ jobs:
           cp -r cypress/videos public/videos
       - name: Upload screenshots
         uses: actions/upload-artifact@v3
-        if: failure() | success()
         with:
           name: cypress-snapshots
           path: cypress/snapshots

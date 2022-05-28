@@ -5,9 +5,8 @@ jobs:
     name: continue integration
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - run: |
-          npm cache clean
           npm ci
           npm run build
           npm run test:unit

@@ -16,6 +16,7 @@ jobs:
         with:
           start: npm run dev
           wait-on: http://localhost:3000
+      - run: mkdir -p cypress/snapshots 
       - name: Copy test execution videos
         run: |
           $(npm bin)/cypress cache path

@@ -22,8 +22,8 @@ jobs:
           $(npm bin)/cypress cache list
           $(npm bin)/cypress verify
           mkdir public
-          mkdir -p Cypress/snapshots 
-          cp -r Cypress/videos /public/videos
+          mkdir -p cypress/snapshots 
+          cp -r cypress/videos /public/videos
       - name: Upload screenshots
         uses: actions/upload-artifact@v3
         with:

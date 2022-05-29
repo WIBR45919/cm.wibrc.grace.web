@@ -1,5 +1,6 @@
 {
   "baseUrl": "http://localhost:3000",
+  "projectId": "6c5gde",
   "integrationFolder": "cypress/integration",
   "screenshotOnRunFailure": true,
   "chromeWebSecurity": true,

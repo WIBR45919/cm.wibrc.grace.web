@@ -23,7 +23,7 @@ jobs:
           $(npm bin)/cypress verify
           mkdir public
           cp -r cypress/videos public/videos
-          mkdir -p cypress/snapshots
+      - run: mkdir -p cypress/snapshots
       - name: Upload screenshots
         uses: actions/upload-artifact@v3
         with:

@@ -28,13 +28,12 @@ jobs:
           $(npm bin)/cypress cache list
           $(npm bin)/cypress verify
           mkdir public
-          mkdir -p cypress/snapshots 
           cp -r cypress/videos public/videos
       - name: Upload screenshots
         uses: actions/upload-artifact@v3
         with:
-          name: cypress-snapshots
-          path: cypress/snapshots
+          name: code-coverage-report
+          path: output/test/code-coverage.html
       - name: Merge test results into one
         run: npm run report:merge
       - name: Generate HTML report
